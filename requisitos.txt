@@ -1,0 +1,23 @@
+1. identificar casillas
+2. cambio de turno
+3. verificar si hay ganador cada jugada:
+    - guardar posiciones de cada jugador en arrays
+    - comprobar si coincide con alguna de las combinaciones ganadoras
+    - Si hay ganador eliminar eventos para no poder continuar el juego
+4. Contador de victorias de cada equipo y de empates
+5. (OPCIONAL) Mostrar linea ganadora (style)
+6. Reiniciar tablero (button (?))
+7. reiniciar estadisticas (button (?))
+
+8. (EXTRA) contador tiempo para cambiar de turno (15s) //setTimeout
+
+Tener en cuenta:
+    - Comentarios para las funciones
+        @description
+        @param
+        @return
+
+    - Correcto uso de variables y descripcion
+    - no debe haber errores en consola
+    - Estetica
+    - Subir el proyecto a Github
