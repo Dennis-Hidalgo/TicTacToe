@@ -77,16 +77,14 @@ function validarVictoria(fichas = []) {
     let i = 0;
     let j = 0;
     fichas.sort();
+
     do {
-        console.log(combinacionesGanadoras[i]);
+        console.log(combinacionesGanadoras[i]);  
         do {
             
             if (combinacionesGanadoras[i].includes(fichas[j])) {
 
                 contador = contador + 1;
-                continuar = true
-            } else {
-                continuar = false;
             }
 
             console.log("fichas: " + fichas[j]);
@@ -95,17 +93,16 @@ function validarVictoria(fichas = []) {
             console.log(continuar);
             j = j + 1;
 
-
-            if (contador == 3) {
+            if (contador >= 3) {
                 ganador = true;
             }
-        } while (j < fichas.length && continuar)
+        } while (j < fichas.length && ganador == false)
 
-        i = i + 1;
-        j = 0;
 
         if (ganador == false) {
+            i = i + 1;
             contador = 0;
+            j=0;
         }
     } while (i < combinacionesGanadoras.length && ganador == false)
 }
@@ -120,7 +117,6 @@ function agregarFicha(numero) {
      * es necesario eliminar el clic del div
      */
 
-
     do {
         if (turno) {
             casillas[numero].innerHTML = 'X';
@@ -130,10 +126,8 @@ function agregarFicha(numero) {
             if (fichas1.length >= 3) {
                 validarVictoria(fichas1);
             }
-
             console.log(ganador);
-
-
+        
         } else {
             casillas[numero].innerHTML = 'O';
             casillas[numero].removeAttribute('onclick')
@@ -144,7 +138,7 @@ function agregarFicha(numero) {
 
         }
 
-    } while (ganador)
+    } while (ganador);
     // }
     console.log(fichas1);
     console.log(fichas2);
