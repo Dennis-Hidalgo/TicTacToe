@@ -70,7 +70,48 @@ let turno = true;
 let fichas1 = [];
 let fichas2 = [];
 let ganador = false;
-let i, j,cont1,cont2 = 0;
+let continuar = false;
+let contador = 0;
+
+function validarVictoria(fichas = []) {
+    let i = 0;
+    let j = 0;
+    fichas.sort();
+    do {
+        console.log(combinacionesGanadoras[i]);
+        do {
+            
+            if (combinacionesGanadoras[i].includes(fichas[j])) {
+
+                contador = contador + 1;
+                continuar = true
+            } else {
+                continuar = false;
+            }
+
+            console.log("fichas: " + fichas[j]);
+            console.log("j: " + j);
+            console.log(contador);
+            console.log(continuar);
+            j = j + 1;
+
+
+            if (contador == 3) {
+                ganador = true;
+            }
+        } while (j < fichas.length && continuar)
+
+        i = i + 1;
+        j = 0;
+
+        if (ganador == false) {
+            contador = 0;
+        }
+    } while (i < combinacionesGanadoras.length && ganador == false)
+}
+
+// validarVictoria();
+
 function agregarFicha(numero) {
     console.log('Has hecho clic en la casilla ' + numero)
 
@@ -81,28 +122,32 @@ function agregarFicha(numero) {
 
 
     do {
-    if (turno) {
-        casillas[numero].innerHTML = 'X';
-        casillas[numero].removeAttribute('onclick')
-        turno = false;
-        fichas1.push(numero);
-        fichas1.sort;
-        
+        if (turno) {
+            casillas[numero].innerHTML = 'X';
+            casillas[numero].removeAttribute('onclick')
+            turno = false;
+            fichas1.push(numero);
+            if (fichas1.length >= 3) {
+                validarVictoria(fichas1);
+            }
 
-    } else {
-        casillas[numero].innerHTML = 'O';
-        casillas[numero].removeAttribute('onclick')
-        turno = true;
-        fichas2.push(numero);
-        
-    }
+            console.log(ganador);
+
+
+        } else {
+            casillas[numero].innerHTML = 'O';
+            casillas[numero].removeAttribute('onclick')
+            turno = true;
+            fichas2.push(numero);
+            // validarVictoria(fichas2);
+            console.log(ganador);
+
+        }
 
     } while (ganador)
     // }
     console.log(fichas1);
     console.log(fichas2);
-    console.log(ganador)
-
 }
 
 /**
