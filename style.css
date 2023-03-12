@@ -1,0 +1,114 @@
+
+
+body{
+    color: aliceblue;
+    font-family: cursive;
+    background-image: url("/images/fondo2.jpg");
+    background-size: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.tablero{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 65%;
+    width: 45%;
+    border: 10px groove rgb(165, 108, 42);
+    background-color: rgb(202, 202, 202);
+}
+
+.casilla{
+    display: flex;
+    height: 180px;
+    width: 180px;
+    font-size: 150px;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+}
+
+.menu{
+    justify-content: center;
+    display:flex;
+    flex-wrap: wrap;
+    width: 45%;
+    gap: 20px;
+}
+
+.cuentaAtras{
+    width: 100%;
+    height: 20%;
+}
+
+p {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border: 5px groove rgb(122, 13, 13);
+    background-color: rgb(39, 39, 39);
+    border-radius: 10px;
+    height: 50%;
+    font-size: 25px;
+    justify-content: center;
+    text-align: center;
+    width: 70%;
+}
+
+.cuentaAtras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contadores{
+    padding-top: 30px;
+    display: flex;
+    font-size: 40px;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    height: 65%;
+    justify-content: space-around;
+}
+
+.botones{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.nombre{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+    height: 60px;
+    width: 45%;
+}
+
+.contador{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border: 5px dashed rgb(194, 194, 194);
+    height: 60px;
+    width: 20%;
+}
+
+.boton{
+    font-family: cursive;
+    border-radius:10%;
+    height: 60px;
+    width: 140px;
+    border-radius: 20%;
+    border: 5px solid rgb(7, 215, 0)
+}
+
