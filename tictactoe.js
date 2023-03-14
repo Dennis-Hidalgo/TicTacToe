@@ -36,10 +36,12 @@ let cont2 = document.getElementsByClassName('contador')[1];
 let cont3 = document.getElementsByClassName('contador')[2];
 document.getElementsByClassName('nombre')[2].textContent = 'Empates:';
 
-
+/**
+ * Funcion que despliega el tablero para que sea visible
+ */
 function display(){
     let lineasV = [0, 1, 3, 4, 6, 7];
-    let lineasH =0;
+    let lineasH = 0;
     do {
         casillas[lineasH].style.borderBottom = '5px dashed black';
         lineasH++;
@@ -48,6 +50,16 @@ function display(){
         casillas[lineasV[pos]].style.borderRight = '5px dashed black';
     }
 }
+
+/**
+ * Activa los botones tras iniciar el juego por primera vez, para que no se puedan pulsar sin haber introducido
+ * los nombres de los jugadores
+ */
+function activarBotones(){
+    document.getElementsByClassName('boton')[0].setAttribute('onclick', 'siguientePartida()');
+    document.getElementsByClassName('boton')[1].setAttribute('onclick', 'reiniciarEstadisticas()');
+}
+
 /**
  * Funcion que pide nombre de los 2 jugadores y reinicia las estadisticas
  * @param 
@@ -56,6 +68,7 @@ function display(){
 function empezarJuego() {
     jugador1.textContent = prompt('introduce el nombre del primer jugador');
     jugador2.textContent = prompt('introduce el nombre del segundo jugador');
+    activarBotones();
     reiniciarEstadisticas();
     console.log(tiempo.innerHTML);
     display();
@@ -67,6 +80,8 @@ function empezarJuego() {
  * @returns
  */
 function siguientePartida() {
+    detenerIntervalo();
+    cuentaAtras = 16;
     for (let k = 0; k < casillas.length; k++) {
         casillas[k].style.color = "black";
         casillas[k].setAttribute('onclick', `agregarFicha(${k})`);
@@ -165,6 +180,9 @@ function distinguirFicha(fichasJug = [], jugadorAux, numeroAux = 0) {
     }
 }
 
+/**
+ * Funcion que pinta la combinacion ganadora tras existir una victoria
+ */
 function pintarGanador(){
     if (victoriasX>victoriasO){
         cont1.style.color = 'green';

@@ -26,7 +26,7 @@ body{
 .casilla{
     display: flex;
     height: 180px;
-    width: 180px;
+    width: 30%;
     font-size: 150px;
     justify-content: center;
     align-items: center;
@@ -39,12 +39,9 @@ body{
     flex-wrap: wrap;
     width: 45%;
     gap: 20px;
+    height: 100;
 }
 
-.cuentaAtras{
-    width: 100%;
-    height: 20%;
-}
 
 p {
     display:flex;
@@ -64,6 +61,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 20%;
 }
 
 .contadores{
@@ -74,8 +73,9 @@ p {
     flex-wrap: wrap;
     gap: 20px;
     width: 100%;
-    height: 65%;
+    height: 200px;
     justify-content: space-around;
+    align-content: center;
 }
 
 .botones{
@@ -89,7 +89,6 @@ p {
     display:flex;
     justify-content: center;
     align-items:center;
-
     height: 60px;
     width: 45%;
 }
