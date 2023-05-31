@@ -3,7 +3,7 @@
 body{
     color: aliceblue;
     font-family: cursive;
-    background-image: url("/images/fondo2.jpg");
+    background-image: url("images/fondo2.jpg");
     background-size: 100%;
     display: flex;
     justify-content: space-around;
