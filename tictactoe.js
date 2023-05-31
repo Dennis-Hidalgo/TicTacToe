@@ -159,7 +159,7 @@ function validarVictoria(fichas = []) {
  * Funcion que hace distincion entre jugador 1(X) y jugador 2(O)
  * @param {Array} fichasJug Array que contiene las casillas marcadas de cada jugador
  * @param {Element} jugadorAux Elemento que contiene el nombre del jugador
- * @param {int} numeroAux parametro para referenciar de nuevo la posicion de la casilla
+ * @param {Number} numeroAux parametro para referenciar de nuevo la posicion de la casilla
  * @return
  */
 function distinguirFicha(fichasJug = [], jugadorAux, numeroAux = 0) {
